@@ -65,3 +65,18 @@ function corr(){
   var r = Math.abs(sum / (svgpts.length-1));
   return r;
 }
+
+function iter(){
+  var r = corr();
+  document.getElementById("guess-input").value = r;
+  document.getElementById("submit-btn").click();
+  document.getElementById("next-btn").click();
+
+}
+
+// 100 iterations loop
+function loop(){
+  for (var ii=0; ii<100; ii++){
+    setTimeout(iter, 1000*ii);
+  }
+}
